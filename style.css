@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+}
+
+header{
+    background-color: #efefef;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    color: #27a8ff;
+    box-shadow: 0px 1px 10px 0px #00000070;
+    padding-left: 2rem;
+}
+
+
+footer{
+    background-color: #efefef;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #434343;
+}
+
+main{
+    height: 87.8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+input{
+    width: 84.5%;
+    height: 3.5rem;
+    font-size: 20px;
+    padding: 1rem;
+    border: none;
+    border: solid #5fbfff 2px;
+    border-radius: 0.5rem;
+
+
+}
+
+button, .btn{
+    width: 15%;
+    border: none;
+    cursor: pointer;
+    background-color: #5fbfff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+#copyURL{
+    width: auto;
+    box-shadow: 3px 3px 5px 0px #1a1a1a70;
+}
+
+.inp-group{
+    display: flex;
+    justify-content: space-between;
+    /* border: solid #5fbfff 1px;
+    
+    overflow: hidden; */
+}
+
+.inp-error{
+    border-color: #be000a;
+}
+
+.inp-success{
+    border-color: #00be52;
+}
+
+#msg{
+    color: #be000a;
+}
+
+.box-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin: 0.5rem;
+    padding: 2rem;
+    height: 15rem;
+    justify-content: space-between;
+}
+
+.show-newUrl{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 55rem;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 0px #1a1a1a70;
+    margin: 10px 0;
+}
+
+
+.box{
+    background-color: #a0b7c8;
+    padding: 1rem;
+    border-radius: 5px;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 3px 3px 5px 0px #1a1a1a70;
+}
+
+
+
+#newUrl{
+    font-size: 20px;
+}
+
+.under-tip{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.under-tip .btn{
+    margin: 0px 5px;
+    width: 50px;
+}
+
+.copied{
+    background: #b9ffa8;
+    padding: 0.8rem;
+    margin: 0.2rem;
+    border-radius: 10px;
+    border: solid 2px #007d05;
+    color: #004f03;
+}
+
+
+input:focus{
+    border-color: #2595f1;
+    outline: none;
+    box-shadow: 0px 0px 8px 3px #2196f3b3;
+
+}
+
+button:hover{
+    background-color: #5fbfff;
+    border:solid 2px #0063d5;
+    box-shadow: 0px 0px 8px 3px #2196f3b3;
+
+}
