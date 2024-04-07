@@ -15,8 +15,60 @@ function isURL(text) {
   return urlPattern.test(text);
 }
 
+function createBox(response,link){
+    const DivBox = $('<div>').attr('class', 'box');
+            const DivGroup = $('<div>').attr('class', 'group');
+            const DivShow = $('<div>').attr('class', 'show-newUrl');
+            const DivGroupCopy = $('<div>').attr('class', 'group-copy');
+
+
+            const heading2 = $('<h2>').attr('style', 'color: #003e6e;');
+            const pUnder = $('<p>').attr('class', 'under-tip');
+
+            const aNew = $('<a>').attr('id', 'newUrl');
+            const lNew = $('<a>').attr('id', 'longUrl');
+
+            const btn = $('<button>').attr('id', 'copyURL');
+
+            const iconCopy = $('<img>').attr('src', 'copy_all_FILL0_wght400_GRAD0_opsz24.svg');
+
+            btn.attr('class','copyURL')
+            btn.attr('type','button')
+            
+            iconCopy.attr('id','bg-btnCopy')
+
+            heading2.text('your Short link URL:')
+
+            aNew.text(response);
+            aNew.attr('href',response);
+            aNew.attr('target','response');
+            lNew.text(link);
+            lNew.attr('href',link);
+            lNew.attr('target','_blank');
+            
+
+            $('main').append(DivBox);
+
+            $(DivBox).append(heading2);
+            $(DivBox).append(DivGroup);
+            $(DivBox).append($('<div>'));
+
+            $(DivGroup).append(DivShow);
+            $(DivGroup).append(pUnder);
+
+            $(DivShow).append(aNew);
+            $(DivShow).append(DivGroupCopy);
+
+            $(DivGroupCopy).append(btn);
+            $(btn).append(iconCopy);
+
+            $(pUnder).text('long URL: ');
+            $(pUnder).append(lNew);
+}
+
 $(document).ready(function () {
   $("#genURL").click(function (e) {
+    $('.copied').remove();
     const link = $("#URL").val();
     if (link != "" && isURL(link)) {
       $.ajax({
@@ -37,17 +89,9 @@ $(document).ready(function () {
               "an error occurred please try again."
             );
           }else{
-            const DivBox = $('<div>').attr('class', 'box');
-            const DivGroup = $('<div>').attr('class', 'group');
-            
-          $("#newUrl").text(response);
-          $("#newUrl").attr('href',response);
-          $("#longUrl").text(link);
-          $("#longUrl").attr('href',link);
-          $('#URL').val('')
+            $('.box').remove();
+            createBox(response,link)
 
-          $('#copyURL').addClass('copied');
-          $('#bg-btnCopy').attr('href', 'done_FILL0_wght400_GRAD0_opsz24.svg');
           }
         },
       });
@@ -65,9 +109,12 @@ $(document).ready(function () {
     $("#msg").text("");
   });
 
-  $("#copyURL").click(function (e) {
-    e.preventDefault();
+  $(document).on('click', '#copyURL', function (e) {
+    copyToClipboard($("#newUrl").text().trim());
+    const DivMsgCopied = $('<p>').attr('class', 'copied');
 
-    console.log(copyToClipboard($("#newUrl").text().trim()));
-  });
+    DivMsgCopied.text('copied!');
+
+    $('.show-newUrl').before(DivMsgCopied);
+});
 });

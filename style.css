@@ -51,12 +51,12 @@ button, .btn{
     width: 15%;
     border: none;
     cursor: pointer;
-    background-color: #5fbfff;
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
 
-#copyURL{
+.copyURL{
+    background-color: #5fbfff;
     width: auto;
     box-shadow: 3px 3px 5px 0px #1a1a1a70;
 }
@@ -134,12 +134,19 @@ button, .btn{
 }
 
 .copied{
-    background: #b9ffa8;
-    padding: 0.8rem;
-    margin: 0.2rem;
-    border-radius: 10px;
-    border: solid 2px #007d05;
-    color: #004f03;
+    background: #333;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 0px #e3e3e370;
+}
+
+.group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -150,7 +157,11 @@ input:focus{
 
 }
 
-button:hover{
+#genURL{
+    background-color: #5fbfff;
+}
+
+#genURL:hover{
     background-color: #5fbfff;
     border:solid 2px #0063d5;
     box-shadow: 0px 0px 8px 3px #2196f3b3;

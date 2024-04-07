@@ -1,12 +1,15 @@
 <div class="box">
-    <h2>your Short link URL:</h2>
+    <h2 style="color: #003e6e;">your Short link URL:</h2>
     <div class="group">
         <div class="show-newUrl">
-            <p ID="newUrl">http://localhost/generate-short-link/JZqPRt8e</p>
-            <button id="copyURL">c</button>
+            <a href="" ID="newUrl"></a>
+            <a href="http://" target="_blank" rel="noopener noreferrer"></a>
+            <div class="group-copy">
+                <button id="copyURL" class="copyURL"><img src="copy_all_FILL0_wght400_GRAD0_opsz24.svg" alt="" id='bg-btnCopy'></button>
+            </div>
+
         </div>
-        <br>
-        <p class="under-tip">click <span class="btn">c</span> to copy to clipboard </p>
+        <p class="under-tip">long URL: <a id="longUrl" href="https://www.php.net/manual/en/image.installation.php">https://www.php.net/manual/en/image.installation.php</a></p>
 
     </div>
     <div></div>
